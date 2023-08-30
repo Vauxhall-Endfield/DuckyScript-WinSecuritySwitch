@@ -1,12 +1,12 @@
-# DisableWinUAC
+# DisableWinSecurity
 DuckyScript-DisableWinSecurity is a fork based on the project by [yokokho](https://github.com/yokokho/Another-Rubber-Duck-Payloads). The purpose of this project is simply to add new features to the original project.
 
 ---
 
 * [Preamble](#preamble)
 * [Development](#development)
-  + [disable_script](disable_script)
-  + [reenable_script](reenable_script)
+  + [Disable_WinSecurity](#Disable_WinSecurity)
+  + [Re-enable_WinSecurity](#Re-enable_WinSecurity)
 * [Disclaimer](#disclaimer)
 
 ## Preamble
@@ -17,7 +17,7 @@ Judging by the methodology of the original payload, we can deduce that it is pos
 
 ## Development
 
-### disable_script
+### Disable_WinSecurity
 
 ```
 REM Automation for Disabling Essential Security Features on Target Device
@@ -45,7 +45,7 @@ STRING exit
 ENTER
 ```
 
-### reenable_script
+### Re-enable_WinSecurity
 ```
 REM Automation for Re-enabling Essential Security Features on Target Device
 DEFAULTDELAY 1000
