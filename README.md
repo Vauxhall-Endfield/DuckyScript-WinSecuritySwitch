@@ -1,5 +1,5 @@
-# DuckyScript-DisableWinSecurity
-DuckyScript-DisableWinSecurity is a fork based on the project by [yokokho](https://github.com/yokokho/Another-Rubber-Duck-Payloads). The purpose of this project is to add new features to the original project.
+# DuckyScript-WinSecuritySwitch
+DuckyScript-WinSecuritySwitch is a fork based on the project by [yokokho](https://github.com/yokokho/Another-Rubber-Duck-Payloads). The purpose of this project is to add new features to the original project.
 
 ---
 
