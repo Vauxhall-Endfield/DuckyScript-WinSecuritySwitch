@@ -14,7 +14,9 @@ DuckyScript-DisableWinSecurity is a fork based on the project by [yokokho](https
 
 ## Preamble
 
-The original project contained one DuckyScript payload that will disable all essential security features on the target device using Windows PowerShell. It made good use of rapid keystroke injection attacks to reduce the level of security of the target device's User Account Control (UAC) settings to the minimum, disable Automatic Sample Submission and Virus and Threat Protection in Windows Defender, and disable Windows Firewall. Judging by the methodology of the original payload, we can deduce that it is possible for the end user to undo the changes made by the aforementioned payload by utilizing Windows PowerShell as well. In order to do so, we will need to create a second payload, which will focus on restoring the default settings for the target device's User Account Control (UAC) settings, Windows Defender and Windows Firewall.
+The original project contained one DuckyScript payload that will disable all essential security features on the target device using Windows PowerShell. It made good use of rapid keystroke injection attacks to reduce the level of security of the target device's User Account Control (UAC) settings to the minimum, disable Automatic Sample Submission and Virus and Threat Protection in Windows Defender, and disable Windows Firewall.
+
+Judging by the methodology of the original payload, we can deduce that it is possible for the end user to undo the changes made by the aforementioned payload by utilizing Windows PowerShell as well. In order to do so, we will need to create a second payload, which will focus on restoring the default settings for the target device's User Account Control (UAC) settings, Windows Defender and Windows Firewall.
 
 ## Dependencies
 
