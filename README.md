@@ -7,16 +7,14 @@ DuckyScript-DisableWinSecurity is a fork based on the project by [yokokho](https
 * [Dependencies](#dependencies)
 * [Development](#development)
   + [Disable_WinSecurity](#disable_winsecurity)
-  + [Re-enable_WinSecurity](#re-enable_winsecurity)
+  + [Reenable_WinSecurity](#reenable_winsecurity)
 * [Practical Applications](#practical-applications)
 * [Limitations](#limitations)
 * [Disclaimer](#disclaimer)
 
 ## Preamble
 
-The original project contained a DuckyScript payload to disable all essential security measures on the target device, by reducing the level of security of the target device's User Account Control (UAC) settings to the minimum, disabling Automatic Sample Submission and Virus and Threat Protection in Windows Defender, and disabling Windows Firewall. All of these actions are made possible by instructing the DuckyScript payload to use Windows PowerShell.
-
-Judging by the methodology of the original payload, we can deduce that it is possible for the end user to undo the changes made by the aforementioned payload by utilizing Windows PowerShell as well. In order to do so, we will need to create a second payload, which will focus on restoring the default settings for the target device's User Account Control (UAC) settings, Windows Defender and Windows Firewall.
+The original project contained one DuckyScript payload that will disable all essential security features on the target device using Windows PowerShell. It made good use of rapid keystroke injection attacks to reduce the level of security of the target device's User Account Control (UAC) settings to the minimum, disable Automatic Sample Submission and Virus and Threat Protection in Windows Defender, and disable Windows Firewall. Judging by the methodology of the original payload, we can deduce that it is possible for the end user to undo the changes made by the aforementioned payload by utilizing Windows PowerShell as well. In order to do so, we will need to create a second payload, which will focus on restoring the default settings for the target device's User Account Control (UAC) settings, Windows Defender and Windows Firewall.
 
 ## Dependencies
 
@@ -24,9 +22,7 @@ These payloads work on target devices that are running on Windows 10 operating s
 
 ## Development
 
-Before we can start creating our payloads, we should perform some initial setups for both payloads.
-
-We will first set our **DEFAULTDELAY** value to 1000 — the units being in milliseconds (ms) — which is equivalent to one second.
+Before we can start creating our payloads, named **Disable_WinSecurity** and **Reenable_WinSecurity**, we should perform some initial setups for both payloads. We will first set our **DEFAULTDELAY** value on both payloads to 1000 — the units being in milliseconds (ms) — which is equivalent to one second.
 
 ```
 DEFAULTDELAY 1000
@@ -42,9 +38,9 @@ DELAY 2000
 ALT y
 ```
 
-Notice that we have added a custom **DELAY** value of 2000 (equivalent to two seconds) after entering the string to launch Windows PowerShell. This is because we want to give the payload enough time to react accordingly to the User Account Control popup when we want to run Windows PowerShell as an adminstrator, especially if we're executing these payloads in an older hardware.
+Notice that we have added a custom **DELAY** value of 2000 (equivalent to two seconds) after entering the string to launch Windows PowerShell. This is because we want to give the payload enough time to react accordingly to the User Account Control popup when we want to run Windows PowerShell as an adminstrator, especially if we are executing these payloads in an older hardware.
 
-Once each of the payloads has executed its assigned functions, we will terminate the Windows PowerShell application by simply adding these two lines at the end of our file, as follows:
+Finally, we will add these two lines of code at the end of our payloads to terminate Windows PowerShell, as follows:
 
 ```
 STRING exit
@@ -81,7 +77,7 @@ STRING Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 ENTER
 ```
 
-### Re-enable_WinSecurity
+### Reenable_WinSecurity
 
 Restore Windows UAC to Its Original Value
 
