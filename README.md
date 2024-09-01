@@ -8,9 +8,9 @@ DuckyScript-WinSecuritySwitch is a fork based on the project by [yokokho](https:
 * [Development](#development)
   + [Disable_WinSecurity](#disable_winsecurity)
   + [Reenable_WinSecurity](#reenable_winsecurity)
-* [Practical Applications](#practical-applications)
 * [Limitations](#limitations)
 * [Disclaimer](#disclaimer)
+
 
 ## Preamble
 
@@ -18,9 +18,11 @@ The original project contained one DuckyScript payload that will disable all ess
 
 Judging by the methodology of the original payload, we can deduce that it is possible for the end user to undo the changes made by the aforementioned payload by utilizing Windows PowerShell as well. In order to do so, we will need to create a second payload, which will focus on restoring the default settings for the target device's User Account Control (UAC) settings, Windows Defender and Windows Firewall.
 
+
 ## Dependencies
 
 These payloads work on target devices that are running on Windows 10 operating system or newer only. No Internet connection required.
+
 
 ## Development
 
@@ -48,6 +50,7 @@ Finally, we will add these two lines of code at the end of our payloads to termi
 STRING exit
 ENTER
 ```
+
 
 ### Disable_WinSecurity
 
@@ -79,6 +82,7 @@ STRING Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
 ENTER
 ```
 
+
 ### Reenable_WinSecurity
 
 Restore Windows UAC to Its Original Value
@@ -108,7 +112,6 @@ STRING Set-MpPreference -DisableBlockAtFirstSeen $false
 ENTER
 ```
 
-## Practical Applications
 
 ## Limitations
 
@@ -119,6 +122,7 @@ For example, if the target device is too slow to launch Windows PowerShell, the 
 The easiest workaround for this issue is for the user to increase the **DELAY** value when launching Windows PowerShell. Currently, the default value for the **DELAY** command in our DuckyScript payloads is 1000. Increasing the **DELAY** value to 5000 (equivalent to five seconds) should allow older systems to react accordingly to the injected keystrokes.
 
 If the latency issue persists, the user would need to keep increasing the **DELAY** value until the payloads run properly.
+
 
 ## Disclaimer
 
